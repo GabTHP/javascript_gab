@@ -20,18 +20,49 @@ const entrepreneurs = [
 ];
 
 function displayEntrepreneurs70() {
-  const entrepreseurs70 =  entrepreneurs.filter(function(entrepreneur) {
+  const entrepreneurs70 =  entrepreneurs.filter(function(entrepreneur) {
     return entrepreneur.year >= 1970 && entrepreneur.year <=1979 ;
   });
-  console.log(entrepreseurs70);
+  console.log(entrepreneurs70);
 }
 
 displayEntrepreneurs70();
 
-console.log("et voilivoilou on passe à la suite !")
 
-entrepreneurs.pop()
-console.log(entrepreneurs)
+function getTitle() {
+nameArray=[]
+entrepreneurs.forEach(entrepreneur => {
+
+  nameArray.push(entrepreneur.first + " " + entrepreneur.last);
+})
+
+console.log(nameArray)
+
+}
+
+getTitle();
+
+function getAge() {
+ageToday =[]
+entrepreneurs.forEach(entrepreneur => {
+
+  ageToday.push( entrepreneur.first + " " + entrepreneur.last +" " + (2020 - entrepreneur.year)+ "ans");
+})
+
+console.log(ageToday)
+}
+
+getAge();
+
+function sortedList() {
+  let sorted = entrepreneurs
+  sorted.sort(function(a, b){return a.last.localeCompare(b.last);
+  })
+  console.log(sorted);
+}
+
+sortedList();
+
 
 
 
